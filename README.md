@@ -1,5 +1,4 @@
 <h1>EN/en</h1>
-<br>
 <h2>Machine Learning Projects</h2>
 
 <br>
@@ -8,9 +7,9 @@ Repository of models and projects made with datasets from Kaggle, among others.
 Each folder is referenced by the dataset name, for example the Iris dataset is in the Iris folder.
 <br>
 Every model was developed in <b>Python 3</b>.
-<br>
+<br><br>
   Below I list the libraries used mostly:
-<br>
+<br><br>
   <ul>
     <li>Pandas</li>
     <li>Numpy</li>
@@ -21,8 +20,7 @@ Every model was developed in <b>Python 3</b>.
 In the most recent models there is a <b>PDF</b> attached, explaining the code and its conclusion.
 <br><br>
 
-<h1>PT/br>
-<br>
+<h1>PT/br</h1>
 <h2>Projetos de Machine Learning</h2>
 <br>
 Repositório de modelos e projetos feitos com os datasets do site Kaggle entre outros.
@@ -30,9 +28,9 @@ Repositório de modelos e projetos feitos com os datasets do site Kaggle entre o
 Cada pasta é referenciado pelo nome do dataset, por exemplo o Iris dataset está na pasta Iris.
 <br>
   Todo modelo foi desenvolvido em <b>Python 3</b>.
-<br>
+<br><br>
 Abaixo listo as bibliotecas utilizadas em sua maioria:
-<br>
+<br><br>
   <ul>
     <li>Pandas</li>
     <li>Numpy</li>
