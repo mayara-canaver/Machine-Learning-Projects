@@ -77,7 +77,7 @@ arquivo_treino[cols] = (arquivo_treino[cols].
 # VERIFICANDO QUANTIDADE DE LINHAS CONTENDO VALORES NAN DAS COLUNAS
 
 for coluna in arquivo_treino:
-    "print(arquivo_treino[coluna].isna().sum(), coluna)"
+    print(arquivo_treino[coluna].isna().sum(), coluna)
 
 # COLUNAS QUE SE MOSTRARAM INVIÁVEIS PARA O MODELO:
 # -> MISCFEATURE = 1406 NAN
