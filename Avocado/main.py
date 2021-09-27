@@ -6,9 +6,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pickle
 
-from sklearn.preprocessing import MinMaxScaler, OrdinalEncoder
+from sklearn.preprocessing import OrdinalEncoder
 from sklearn.impute import SimpleImputer
-from sklearn.feature_selection import SelectKBest
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.linear_model import LinearRegression
@@ -18,6 +17,29 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score, m
 
 warnings.simplefilter("ignore")
 pd.options.display.max_columns = None
+
+def retorna_resultado_modelo(tipo_modelo_parametro):
+    # REALIZANDO O FIT E PREDICT DO MODELO
+
+    pred = tipo_modelo_parametro.fit(X_train, y_train).predict(X_test)
+
+    # REALIZANDO TESTES DE DESEMPENHO DE MODELO
+
+    """MEAN SQUARED ERROR"""
+    mse = mean_squared_error(y_test, pred)
+
+    """MEAN ABSOLUTE ERROR"""
+    mae = mean_absolute_error(y_test, pred)
+
+    """R2"""
+    r2 = r2_score(y_test, pred)
+
+    """MAX ERROR"""
+    max_erro = max_error(y_test, pred)
+
+    return print(f"MODELO {tipo_modelo_parametro}\nMSE: {mse}\nMAE: {mae}\nR2: {r2}\n"
+                 f"MAX ERROR: {max_erro}\n")
+
 
 # REALIZANDO A IMPORTAÇÃO DO ARQUIVO DO AVOCADO
 
@@ -59,6 +81,10 @@ plt.show()
 # PODEMOS PERCEBER UM AUMENTO NO NÚMERO DE AVOCADOS
 
 arquivo = arquivo.loc[arquivo["YEAR"] != 2018]
+
+gby_arquivo = arquivo.groupby(["YEAR"]).sum(["TOTAL VOLUME"])
+
+ano_unico = arquivo["YEAR"].unique()
 
 plt.title("Volume de Avocados vendidos através dos anos")
 plt.xlabel("Anos")
@@ -109,10 +135,51 @@ arquivo = arquivo.drop(["UNNAMED: 0", "DATE", "YEAR", "SMALL BAGS", "LARGE BAGS"
 for codigo in arquivo[["4046", "4225", "4770", "TOTAL BAGS"]]:
     arquivo[codigo] = (arquivo[codigo] / arquivo["TOTAL VOLUME"]) * 100
 
-data = arquivo.sample(frac=0.9, random_state=786).reset_index(drop=True)
+# DIVIDINDO EM VARIÁVEL CATEGÓRICA PARA REMOVER NAN E INSERIR A FREQUÊNCIA NO LUGAR E TRANSFORMANDO EM NUMÉRICO
 
-print('Data for Modeling: ' + str(data.shape))
-from pycaret.regression import *
+cat_att = arquivo.select_dtypes(include=["object"]).columns.to_list()
 
-#
+imputer_frequencia = SimpleImputer(strategy="most_frequent")
 
+encoder = OrdinalEncoder()
+
+for cat in cat_att:
+    arquivo[cat] = imputer_frequencia.fit_transform(np.array(arquivo[cat]).reshape(-1, 1))
+    arquivo[cat] = encoder.fit_transform(np.array(arquivo[cat]).reshape(-1, 1))
+
+# REALIZANDO O SHUFFLE PARA MISTURAR AS LINHAS DO DATASET E CRIANDO UM ARQUIVO DE TESTE
+
+arquivo = arquivo.sample(frac=1, random_state=1)
+
+arquivo_teste = arquivo[0: (len(arquivo) // 2)]
+
+arquivo = arquivo[(len(arquivo) // 2):]
+
+# SEPARANDO O ARQUIVO EM ARQUIVO DE TREINO E TESTE E EXPORTANDO O DE TESTE
+
+arquivo_teste.to_csv(r"C:\Users\Mayara Lopes\Desktop\GitHub\machine_learning_projects\Avocado\teste.csv", index=False)
+
+# ESCOLHENDO AS VARIAVEIS PARA O X E FAZENDO O TRAIN TEST SPLIT
+
+X = arquivo.drop(["AVERAGEPRICE"], axis=1)
+y = arquivo["AVERAGEPRICE"]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=1, shuffle=True)
+
+# VERIFICANDO RESULTADO DE CADA MODELO DE REGRESSÃO FEITO
+
+lista_modelos = [RandomForestRegressor(random_state=1), LinearRegression(), Ridge(solver="auto", alpha=1.0),
+                 DecisionTreeRegressor(max_depth=3, random_state=1)]
+
+for tipo_modelo in lista_modelos:
+    retorna_resultado_modelo(tipo_modelo)
+
+"VERIFICOU-SE ENTÃO QUE O MELHOR MODELO EM QUESTÃO É DE RIDGE"
+
+# EXPORTANDO O MODELO COM O PICKLE
+
+modelo = Ridge(solver="auto", alpha=1.0).fit(X_train, y_train)
+
+finalizado = "modelo_finalizado.sav"
+
+pickle.dump(modelo, open(finalizado, "wb"))
