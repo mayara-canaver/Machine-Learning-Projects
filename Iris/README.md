@@ -25,6 +25,12 @@ The columns in this dataset are:
 
 The following libraries/packages need to be installed before running the project:
 
+```bash
+pip install scikit-learn
+pip install numpy
+pip install pandas
+```
+
 
 # PT/br
 
