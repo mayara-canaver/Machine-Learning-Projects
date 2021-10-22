@@ -2,7 +2,7 @@
 
 The Credit Card Dataset can be accessed via the hyperlink below:
 
-[Credit Card]("https://www.kaggle.com/mlg-ulb/creditcardfraud")
+https://www.kaggle.com/mlg-ulb/creditcardfraud
 
 It is important that credit card companies are able to recognize fraudulent credit card transactions so that customers are not charged for items that they did not purchase.
 
@@ -26,7 +26,7 @@ pip install matplotlib
 
 O Credit Card Dataset pode ser acessado através do hyperlink abaixo:
 
-[Credit Card]("https://www.kaggle.com/mlg-ulb/creditcardfraud")
+https://www.kaggle.com/mlg-ulb/creditcardfraud
 
 É importante que as empresas de cartão de crédito sejam capazes de reconhecer transações fraudulentas com cartão de crédito para que os clientes não sejam cobrados por itens que não compraram.
 
