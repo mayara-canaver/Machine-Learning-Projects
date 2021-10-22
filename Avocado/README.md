@@ -2,7 +2,7 @@
 
 The Avocado Dataset can be accessed via the hyperlink below:
 
-[Avocado]("https://www.kaggle.com/neuromusic/avocado-prices")
+https://www.kaggle.com/neuromusic/avocado-prices
 
 It is a well known fact that Millenials LOVE Avocado Toast. It's also a well known fact that all Millenials live in their parents basements.
 Clearly, they aren't buying home because they are buying too much Avocado Toast!
@@ -45,7 +45,7 @@ pip install matplotlib
 
 O Avocado Dataset pode ser acessado através do hyperlink abaixo:
 
-[Avocado]("https://www.kaggle.com/neuromusic/avocado-prices")
+https://www.kaggle.com/neuromusic/avocado-prices
 
 É um fato bem conhecido que Millenials AMAM Avocado Toast. Também é um fato bem conhecido que todos os Millenials vivem no porão de seus pais.
 Claramente, eles não estão comprando casa porque estão comprando torradas de abacate demais!
