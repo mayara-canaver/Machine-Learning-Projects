@@ -2,7 +2,7 @@
 
 The Titanic Dataset can be accessed via the hyperlink below:
 
-[Titanic]("https://www.kaggle.com/c/titanic")
+https://www.kaggle.com/c/titanic
 
 This is the legendary Titanic ML competition – the best, first challenge for you to dive into ML competitions and familiarize yourself with how the Kaggle platform works.
 
@@ -22,7 +22,7 @@ pip install pandas
 
 O Titanic Dataset pode ser acessado através do hyperlink abaixo:
 
-[Titanic]("https://www.kaggle.com/c/titanic")
+https://www.kaggle.com/c/titanic
 
 Esta é a lendária competição Titanic ML - o melhor e primeiro desafio para você mergulhar nas competições de ML e se familiarizar com o funcionamento da plataforma Kaggle.
 
