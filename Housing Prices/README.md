@@ -2,7 +2,7 @@
 
 The Housing Prices Dataset can be accessed via the hyperlink below:
 
-[House Prices]("https://www.kaggle.com/c/home-data-for-ml-course/overview")
+https://www.kaggle.com/c/home-data-for-ml-course/overview
 
 Ask a home buyer to describe their dream house, and they probably won't begin with the height of the basement ceiling or the proximity to an east-west railroad. 
 
@@ -27,7 +27,7 @@ pip install matplotlib
 
 O Housing Prices Dataset pode ser acessado através do hyperlink abaixo:
 
-[House Prices]("https://www.kaggle.com/c/home-data-for-ml-course/overview")
+https://www.kaggle.com/c/home-data-for-ml-course/overview
 
 Peça a um comprador de imóvel residencial para descrever a casa dos seus sonhos, e provavelmente não começará com a altura do teto do porão ou a proximidade de uma ferrovia leste-oeste. 
 
