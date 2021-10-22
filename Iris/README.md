@@ -2,7 +2,7 @@
 
 The Iris Dataset can be accessed via the hyperlink below:
 
-[Iris Dataset]("https://www.kaggle.com/uciml/iris")
+https://www.kaggle.com/uciml/iris
 
 It includes three flower species with 50 samples each, as well as some properties about each flower.
 One species of flower is linearly separable from the other two, but the other two are not linearly separable from each other.
@@ -36,7 +36,7 @@ pip install pandas
 
 O Irís Dataset pode ser acessado através do hyperlink abaixo:
 
-[Iris Dataset]("https://www.kaggle.com/uciml/iris")
+https://www.kaggle.com/uciml/iris
 
 Inclui três espécies de flores com 50 amostras cada, bem como algumas propriedades sobre cada flor. 
 Uma espécie de flor é linearmente separável das outras duas, mas as outras duas não são linearmente separáveis uma da outra.
