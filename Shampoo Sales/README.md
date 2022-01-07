@@ -10,7 +10,7 @@ Contain the sales of shampoo for 36 months time
 
 The original dataset is credited to Makridakis, Wheelwright, and Hyndman (1998).
 
-##Libraries
+## Libraries
 
 The following libraries/packages need to be installed before running the project:
 
