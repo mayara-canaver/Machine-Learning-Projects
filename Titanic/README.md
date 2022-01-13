@@ -8,7 +8,7 @@ This is the legendary Titanic ML competition – the best, first challenge for y
 
 The competition is simple: use machine learning to create a model that predicts which passengers survived the Titanic shipwreck.
 
-##Libraries
+## Libraries
 
 The following libraries/packages need to be installed before running the project:
 
