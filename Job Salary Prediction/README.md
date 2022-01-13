@@ -6,7 +6,7 @@ https://www.kaggle.com/c/job-salary-prediction
 
 You will be provided with a training data set on which to build your model, which will include all variables including salary.  A second data set will be used to provide feedback on the public leaderboard.  After approximately 6 weeks, Kaggle will release a final data set that does not include the salary field to participants, who will then be required to submit their salary predictions against each job for evaluation.
 
-##Libraries
+## Libraries
 
 The following libraries/packages need to be installed before running the project:
 
