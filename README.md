@@ -1,42 +1,17 @@
-<h1>EN/en</h1>
-<h2>Machine Learning Projects</h2>
+## Introduction 
 
-<br>
-Repository of models and projects made with datasets from Kaggle, among others.
-<br>
-Each folder is referenced by the dataset name, for example the Iris dataset is in the Iris folder.
-<br>
-Every model was developed in <b>Python 3</b>.
-<br><br>
-  Below I list the libraries used mostly:
-<br><br>
-  <ul>
-    <li>Pandas</li>
-    <li>Numpy</li>
-    <li>Matplotlib</li>
-    <li>Sklearn</li>
-  </ul>
-<br>
-In the most recent models there is a <b>PDF</b> attached, explaining the code and its conclusion.
-<br><br>
+This repository, Machine Learning Project, serves as a collection of early-stage machine learning experiments and learning exercises. It was created to explore fundamental concepts and practical applications of machine learning algorithms.
 
-<h1>PT/br</h1>
-<h2>Projetos de Machine Learning</h2>
-<br>
-Repositório de modelos e projetos feitos com os datasets do site Kaggle entre outros.
-<br>
-Cada pasta é referenciado pelo nome do dataset, por exemplo o Iris dataset está na pasta Iris.
-<br>
-  Todo modelo foi desenvolvido em <b>Python 3</b>.
-<br><br>
-Abaixo listo as bibliotecas utilizadas em sua maioria:
-<br><br>
-  <ul>
-    <li>Pandas</li>
-    <li>Numpy</li>
-    <li>Matplotlib</li>
-    <li>Sklearn</li>
-  </ul>
-<br>
-  Nos modelos mais recentes há um <b>PDF</b> acompanhando e explicando o código e sua conclusão.
-  
+While this repository holds historical significance, it's important to note that it represents a snapshot of my early learning journey. As my skills and knowledge have evolved, I've embarked on more complex and ambitious projects.
+
+Feel free to explore the notebooks and code within this repository to gain insights into foundational machine learning techniques. However, for the latest and most advanced projects, please refer to my other repositories.
+
+### Installing
+
+To run each project, ensure you have the necessary libraries installed. You can easily install them by running the following command in your terminal:
+
+```bash
+pip install -r requirements.txt
+```
+
+By following these steps, you can ensure that your project's dependencies are installed correctly and consistently.
