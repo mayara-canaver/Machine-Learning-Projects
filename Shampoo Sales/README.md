@@ -1,55 +1,15 @@
-# EN/en
+## Introduction
 
-The Shampoo Sales Dataset can be accessed via the hyperlink below:
+This project focuses on forecasting the monthly sales of shampoo using time series analysis techniques. The dataset, which consists of 36 observations over a three-year period, provides valuable insights into sales trends and seasonal patterns.
 
-https://www.kaggle.com/redwankarimsony/shampoo-saled-dataset
+To begin, you'll need to download the shampoo sales dataset. [Shampoo Sales Dataset](https://www.kaggle.com/datasets/redwankarimsony/shampoo-saled-dataset)
 
-This dataset describes the monthly number of sales of shampoo over a 3 year period. The units are a sales count and there are 36 observations.
+### Installing
 
-Contain the sales of shampoo for 36 months time
-
-The original dataset is credited to Makridakis, Wheelwright, and Hyndman (1998).
-
-## Libraries
-
-The following libraries/packages need to be installed before running the project:
+To set up your environment, simply install the required packages using the following command:
 
 ```bash
-pip install scikit-learn
-pip install pmdarima
-pip install seaborn
-pip install statsmodels
-pip install scipy
-pip install csv
-pip install pandas
-pip install matplotlib
+pip install -r requirements.txt
 ```
 
-
-# PT/br
-
-O Shampoo Sales Dataset pode ser acessado através do hyperlink abaixo:
-
-https://www.kaggle.com/redwankarimsony/shampoo-saled-dataset
-
-Este dataset descreve o número mensal de vendas de shampoo em um período de 3 anos. As unidades são uma contagem de vendas e há 36 observações.
-
-Conter as vendas de shampoo por 36 meses
-
-O dataset original é creditado a Makridakis, Wheelwright e Hyndman (1998).
-
-## Bibliotecas
-
-As seguintes bibliotecas /pacotes precisam ser instalados antes de rodar o projeto:
-
-```bash
-pip install scikit-learn
-pip install pmdarima
-pip install seaborn
-pip install statsmodels
-pip install scipy
-pip install csv
-pip install pandas
-pip install matplotlib
-```
-
+By following these steps, you can ensure that your project's dependencies are installed correctly and consistently.
