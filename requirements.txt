@@ -1,1 +1,8 @@
 pandas
+scikit-learn
+pmdarima
+seaborn
+statsmodels
+scipy
+csv
+matplotlib
