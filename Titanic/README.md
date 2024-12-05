@@ -1,39 +1,29 @@
-# EN/en
+## Introduction
 
-The Titanic Dataset can be accessed via the hyperlink below:
+This project aims to predict passenger survival on the infamous RMS Titanic disaster using machine learning techniques. The dataset for this project is publicly available from the Kaggle competition, you'll need to download the Titanic dataset: [Titanic: Machine Learning from Disaster.](https://www.kaggle.com/c/titanic/data)
 
-https://www.kaggle.com/c/titanic
+Key features include:
 
-This is the legendary Titanic ML competition – the best, first challenge for you to dive into ML competitions and familiarize yourself with how the Kaggle platform works.
+- PassengerID: A unique identifier for each passenger.
+- Survived: A binary variable indicating whether the passenger survived (1) or died (0).
+- Pclass: Passenger class (1st, 2nd, or 3rd).
+- Name: Passenger's name.
+- Sex: Passenger's sex.
+- Age: Passenger's age.
+- SibSp: Number of siblings/spouses aboard the Titanic.
+- Parch: Number of parents/children aboard the Titanic.
+- Ticket: Ticket number.   
+- Fare: Passenger fare.
+- Cabin: Cabin number.
+- Embarked: Port of embarkation (C = Cherbourg, Q = Queenstown, S = Southampton).
 
-The competition is simple: use machine learning to create a model that predicts which passengers survived the Titanic shipwreck.
+### Installing
 
-## Libraries
-
-The following libraries/packages need to be installed before running the project:
-
-```bash
-pip install scikit-learn
-pip install pandas
-```
-
-
-# PT/br
-
-O Titanic Dataset pode ser acessado através do hyperlink abaixo:
-
-https://www.kaggle.com/c/titanic
-
-Esta é a lendária competição Titanic ML - o melhor e primeiro desafio para você mergulhar nas competições de ML e se familiarizar com o funcionamento da plataforma Kaggle.
-
-A competição é simples: use o aprendizado de máquina para criar um modelo que prevê quais passageiros sobreviveram ao naufrágio do Titanic.
-
-## Bibliotecas
-
-As seguintes bibliotecas /pacotes precisam ser instalados antes de rodar o projeto:
+To set up your environment, simply install the required packages using the following command:
 
 ```bash
-pip install scikit-learn
-pip install pandas
+pip install -r requirements.txt
 ```
+
+By following these steps, you can ensure that your project's dependencies are installed correctly and consistently.
 
