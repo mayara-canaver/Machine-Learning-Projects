@@ -1,49 +1,17 @@
-# EN/en
+## Introduction
 
-The Housing Prices Dataset can be accessed via the hyperlink below:
+This project aims to predict the sale price of houses in Ames, Iowa, using a dataset provided by Kaggle. The dataset contains a variety of features such as square footage, number of bedrooms, and neighborhood characteristics.
 
-https://www.kaggle.com/c/home-data-for-ml-course/overview
+Through data exploration, feature engineering, and model building, we will strive to create a robust model that accurately predicts house prices.
 
-Ask a home buyer to describe their dream house, and they probably won't begin with the height of the basement ceiling or the proximity to an east-west railroad. 
+To get started, you'll need to download the dataset from Kaggle: [House Prices Dataset](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data) 
 
-But this playground competition's dataset proves that much more influences price negotiations than the number of bedrooms or a white-picket fence.
+### Installing
 
-With 79 explanatory variables describing (almost) every aspect of residential homes in Ames, Iowa, this competition challenges you to predict the final price of each home.
-
-##Libraries
-
-The following libraries/packages need to be installed before running the project:
+To set up your environment, simply install the required packages using the following command:
 
 ```bash
-pip install scikit-learn
-pip install numpy
-pip install pandas
-pip install pickle
-pip install matplotlib
+pip install -r requirements.txt
 ```
 
-
-# PT/br
-
-O Housing Prices Dataset pode ser acessado através do hyperlink abaixo:
-
-https://www.kaggle.com/c/home-data-for-ml-course/overview
-
-Peça a um comprador de imóvel residencial para descrever a casa dos seus sonhos, e provavelmente não começará com a altura do teto do porão ou a proximidade de uma ferrovia leste-oeste. 
-
-Mas o conjunto de dados dessa competição prova que influencia muito mais as negociações de preços do que o número de quartos ou uma cerca branca.
-
-Com 79 variáveis explicativas que descrevem (quase) todos os aspectos das casas residenciais em Ames, Iowa, esta competição desafia você a prever o preço final de cada casa.
-
-## Bibliotecas
-
-As seguintes bibliotecas /pacotes precisam ser instalados antes de rodar o projeto:
-
-```bash
-pip install scikit-learn
-pip install numpy
-pip install pandas
-pip install pickle
-pip install matplotlib
-```
-
+By following these steps, you can ensure that your project's dependencies are installed correctly and consistently.
