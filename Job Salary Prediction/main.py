@@ -1,110 +1,35 @@
-# IMPORTANDO BIBLIOTECAS NECESSARIAS
 import pandas as pd
-import pickle
-import numpy as np
-import math
 
-from pyod.models.knn import KNN
-from sklearn.preprocessing import OrdinalEncoder
-from sklearn.impute import SimpleImputer
-from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error, mean_absolute_percentage_error
+from sklearn.preprocessing import LabelEncoder
+from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_percentage_error
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 
-jog_treino = pd.read_csv("arquivos_dado/Train_rev1.csv", error_bad_lines=False)
 
-# TRATAMENTO DOS DADOS DE CADA COLUNA
-jog_treino.columns = [x.upper() for x in jog_treino.columns]
+df = pd.read_csv("Train_rev1.csv")
 
-for coluna in jog_treino.columns:
-    if jog_treino[coluna].dtype == object:
-        jog_treino[coluna] = jog_treino[coluna].str.strip()
-        jog_treino[coluna] = jog_treino[coluna].str.upper()
+df["ContractType"] = df["ContractType"].fillna("unknown")
+df["ContractTime"] = df["ContractTime"].fillna("unknown")
 
-# PREENCHIMENTO DE VALURES NAN
-jog_treino["CONTRACTTIME"] = jog_treino["CONTRACTTIME"].fillna("CONTRACT")
+le = LabelEncoder()
 
-jog_treino["CONTRACTTYPE"] = jog_treino["CONTRACTTYPE"].fillna("NAO_LOCALIZADO")
+df['ContractType'] = le.fit_transform(df['ContractType'])
+df['ContractTime'] = le.fit_transform(df['ContractTime'])
+df['Category'] = le.fit_transform(df['Category'])
 
-# TRATAMENTO E REDUCAO DA COLUNA SOURCENAME
-sourcename_restrito = list(jog_treino["SOURCENAME"].value_counts()[:10].index.values)
+X = df[["ContractTime", "ContractType", "Category"]]
+y = df["SalaryNormalized"]
 
-jog_treino = jog_treino[jog_treino["SOURCENAME"].isin(sourcename_restrito)]
+X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=1, train_size=0.7)
 
-# NORMALIZACAO DOS DADOS CATEGORICOS
-cat_att = jog_treino.select_dtypes(include=["object"]).columns.to_list()
+model = RandomForestRegressor(random_state=1)
 
-imputer_frequencia = SimpleImputer(strategy="most_frequent")
+trained_model = model.fit(X_train, y_train)
 
-encoder = OrdinalEncoder()
+prediction = trained_model.predict(X_test)
 
-for cat in cat_att:
-    jog_treino[cat] = imputer_frequencia.fit_transform(np.array(jog_treino[cat]).reshape(-1, 1))
-    jog_treino[cat] = encoder.fit_transform(np.array(jog_treino[cat]).reshape(-1, 1))
+mse = mean_squared_error(y_test, prediction)
+r2 = r2_score(y_test, prediction)
+mape = mean_absolute_percentage_error(y_test, prediction)
 
-# VERIFICAMOS VALORES DE OUTLIERS COM O PYOD
-detector = KNN()
-
-detector.fit(jog_treino.iloc[::])
-
-previsoes = detector.labels_
-print(previsoes)
-
-confianca = detector.decision_scores_
-print(confianca)
-
-
-
-# REMOCAO DE COLUNAS MENOS UTILIZADAS
-jog_treino = jog_treino.drop(["LOCATIONRAW", "FULLDESCRIPTION"], axis=1)
-
-# SEPARANDO OS VALORES DE X E Y
-
-X = jog_treino[["CONTRACTTIME", "CONTRACTTYPE", "CATEGORY", "SOURCENAME", "LOCATIONNORMALIZED", "COMPANY", "TITLE"]]
-y = jog_treino["SALARYNORMALIZED"]
-
-# SEPARANDO OS VALORES ENTRE TREINO E TESTE
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.15, random_state=1)
-
-# REALIZANDO O TUNING DE PARAMETROS
-"""np.random.seed(1)
-grid = {
-    "n_estimators": np.arange(10, 100, 10),
-    "max_depth": [None, 3, 5, 10],
-    "min_samples_split": np.arange(2, 20, 2),
-    "min_samples_leaf" : np.arange(1, 20, 2),
-    "max_features": [0.5, 1, "sqrt", "auto"],
-    "max_samples": [10000, 12000, 15000, 20000]
-}
-
-rs_model = RandomizedSearchCV(RandomForestRegressor(random_state=1), param_distribuitions=grid)
-"""
-# REALIZANDO O PREDICT E FIT DO MODELO
-modelo = RandomForestRegressor(random_state=1, n_estimators=50, min_samples_split=6, max_samples=20000)
-
-modelo_previsao = modelo.fit(X_train, y_train)
-
-predicao = modelo_previsao.predict(X_test)
-
-# REALIZANDO AS METRICAS DO MODELO
-
-mse = mean_squared_error(y_test, predicao)
-r2 = r2_score(y_test, predicao)
-mae = mean_absolute_error(y_test, predicao)
-mape = mean_absolute_percentage_error(y_test, predicao)
-
-print("RANDOM FOREST:\n\nMSE: %.4f\nR2: %.4f\nMAE: %.4f\nMAPE: %.4f" % (mse, r2, mae, mape))
-
-# DESVIO PADRÃO
-rse = math.sqrt(mse/(X.shape[0]-2))
-
-df_final = pd.DataFrame()
-
-df_final["PREDICAO"] = predicao
-df_final["MIN_PREDICAO"] = predicao - rse
-df_final["MAX_PREDICAO"] = predicao + rse
-
-# EXPORTANDO O MODELO
-finalizado = "modelo_finalizado.sav"
-
-# pickle.dump(modelo, open(finalizado, "wb"))
+print("MSE: %.2f\nR2: %.2f\nMAPE: %.2f\n" % (mse, r2, mape))
