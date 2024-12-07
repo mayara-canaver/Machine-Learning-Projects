@@ -1,39 +1,15 @@
-# EN/en
+## Introduction
 
-The Job Salary Prediction can be accessed via the link below:
+The Kaggle 'Job Salary Prediction' competition presents a valuable dataset for exploring factors that influence salaries. This project delves into the competition data, aiming to build a robust model to predict job salaries using machine learning.
 
-https://www.kaggle.com/c/job-salary-prediction
+To get started, you'll need to download the dataset from Kaggle: [Job Salary Dataset](https://www.kaggle.com/c/job-salary-prediction/data) 
 
-You will be provided with a training data set on which to build your model, which will include all variables including salary.  A second data set will be used to provide feedback on the public leaderboard.  After approximately 6 weeks, Kaggle will release a final data set that does not include the salary field to participants, who will then be required to submit their salary predictions against each job for evaluation.
+### Installing
 
-## Libraries
-
-The following libraries/packages need to be installed before running the project:
+To set up your environment, simply install the required packages using the following command:
 
 ```bash
-pip install scikit-learn
-pip install numpy
-pip install pandas
-pip install pickle
+pip install -r requirements.txt
 ```
 
-
-# PT/br
-
-O Job Salary Prediction pode ser acessado através do link abaixo:
-
-https://www.kaggle.com/c/job-salary-prediction
-
-Você receberá um conjunto de dados de treinamento para construir seu modelo, que incluirá todas as variáveis, incluindo salário. Um segundo conjunto de dados será usado para fornecer feedback sobre o placar público. Após aproximadamente 6 semanas, a Kaggle liberará um conjunto de dados final que não inclui o campo de salário para os participantes, que então deverão enviar suas previsões salariais para cada trabalho para avaliação.
-
-## Bibliotecas
-
-As seguintes bibliotecas /pacotes precisam ser instalados antes de rodar o projeto:
-
-```bash
-pip install scikit-learn
-pip install numpy
-pip install pandas
-pip install pickle
-```
-
+By following these steps, you can ensure that your project's dependencies are installed correctly and consistently.
